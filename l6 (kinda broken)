@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <math.h>
+
+long long factorial(int x);
+long long power(int x, int y);
+double e_calculate(int limit, int x);
+
+
+int main(void){
+    
+    int limit, x = 0;
+    
+    printf("Enter your x:");
+    scanf("%d", &x);
+    printf("Enter your limit:\n");
+    scanf("%d", &limit);
+    
+    double sum = 0;
+    sum = e_calculate(limit, x);
+    
+    printf("e to the power %d is %.2lf\n", x, sum);
+}
+
+long long factorial(int x){
+    
+    long long result = 1; // if x is 0 then result is 1
+    
+    for (int i = 1; i <= x; i--) { //factorial calculation
+        result *= i;
+    }
+    return result;
+}
+
+
+long long power(int x, int y){
+    
+    long long power = 1; // if x is 0 then the power is just 1 since x^0 is just 1
+    
+    for (int i = 0; i < y; i++){ // power calculation
+        power = power * x;
+    }
+    return power;
+}
+
+
+double e_calculate(int limit, int x){
+    
+    double sum = 1;
+    
+    for (int i = 0; i < limit; i++){
+        sum = sum + ((double)power(x, i) / (double)factorial(i));
+    }
+    return sum;
+}
