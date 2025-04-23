@@ -1,0 +1,16 @@
+int main(void){
+    
+    float tempc = 0;
+    printf("Insert the temperature in Fahrenheit:");
+    scanf("%f", &tempc); // getting the input
+    
+    float tempc2 = 0;
+    float tempf = 0;
+    tempc2 = tempc - 32;
+    tempf = tempc2 * 5/9; // converting it
+    
+    printf("The temperature in Celsius is: %f\n", tempf);
+    
+    return 0;
+
+}
