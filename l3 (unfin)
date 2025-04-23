@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void){
+    
+    char character;
+    int isupper, islower, isnum, isspec, letterpos = 0;
+    
+    
+    printf("Enter a character: ");
+    scanf(" %c", &character);
+    
+    isupper = (character >= 'A' && character <= 'Z'); // if its uppercase
+    islower = (character >= 'a' && character <= 'z'); // if its lowercase
+    isnum = (character >= '0' && character <= '9'); // if its a number
+    isspec = !(isupper || islower || isnum); // if its a special character, does this by eliminating all other possibilties
+    
+    if (isupper){
+        letterpos = character - 'A' + 1
+        printf("%c is a capital letter. The letter's number is %d in the alphabet.", character, letterpos);
+    }else if (islower) {
+        letterpos = character - 'a' + 1
+        printf("%c is a lower case letter. The letter's number is %d in the alphabet." character, letterpos);
+    }else if(isnum){
+        
+        
+    }
+}
